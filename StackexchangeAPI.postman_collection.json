@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "27ba2294-2c0f-41df-b321-397c8172c5dd",
+		"name": "Stackexchange API",
+		"description": "This collection tests the Stackexchange API calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Comments for Answer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c686a022-b439-493c-9cb7-6120ec803eef",
+						"type": "text/javascript",
+						"exec": [
+							"let schema = postman.getEnvironmentVariable('schema');",
+							"",
+							"let jsonData = pm.response.json();",
+							"",
+							"pm.test('JSON Schema is valid', function() {",
+							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b9f61a57-bcac-48d4-8171-4fd61e152ca3",
+						"type": "text/javascript",
+						"exec": [
+							"let answerid = pm.iterationData.get(\"answer_id\");",
+							"console.log(\"Answer ID that will be sent\", answerid);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.stackexchange.com/2.2/answers/{{answer_id}}/comments?site={{site}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stackexchange",
+						"com"
+					],
+					"path": [
+						"2.2",
+						"answers",
+						"{{answer_id}}",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "{{site}}"
+						}
+					]
+				},
+				"description": "Get comments on the answers identified by a set of ids"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Badges Recipients",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "17e766d9-703f-4f18-a2f3-5d4e70e824a2",
+						"type": "text/javascript",
+						"exec": [
+							"let schema = postman.getEnvironmentVariable('schema');",
+							"",
+							"let jsonData = pm.response.json();",
+							"",
+							"pm.test('JSON Schema is valid', function() {",
+							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "32c2ed44-6953-48f2-9593-40fdcc3a0c49",
+						"type": "text/javascript",
+						"exec": [
+							"let badgeid = pm.iterationData.get(\"badge_id\");",
+							"console.log(\"Badge ID that will be sent\", badgeid);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.stackexchange.com/2.2/badges/{{badge_id}}/recipients?site={{site}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stackexchange",
+						"com"
+					],
+					"path": [
+						"2.2",
+						"badges",
+						"{{badge_id}}",
+						"recipients"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "{{site}}"
+						}
+					]
+				},
+				"description": "Get the recent recipients of the given badge ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Comments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7d8a6234-da72-4b97-9d3c-6aaa2c3906a6",
+						"type": "text/javascript",
+						"exec": [
+							"let schema = postman.getEnvironmentVariable('schema');;",
+							" ",
+							"let jsonData = pm.response.json();",
+							"",
+							"pm.test('JSON Schema is valid', function() {",
+							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5e26e36e-ecac-4512-ad04-ad193a6cac4a",
+						"type": "text/javascript",
+						"exec": [
+							"let commentsid = pm.iterationData.get(\"comments_id\");",
+							"console.log(\"Comments ID that will be sent\", commentsid);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.stackexchange.com/2.2/comments/{{comments_id}}?site={{site}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stackexchange",
+						"com"
+					],
+					"path": [
+						"2.2",
+						"comments",
+						"{{comments_id}}"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "{{site}}"
+						}
+					]
+				},
+				"description": "Get comments identified by a set of ids"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post Comments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "74a8308f-35e5-4142-bdbf-a7a5e10b289d",
+						"type": "text/javascript",
+						"exec": [
+							"let schema = postman.getEnvironmentVariable('schema');",
+							" ",
+							"let jsonData = pm.response.json();",
+							"",
+							"pm.test('JSON Schema is valid', function() {",
+							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1931840a-e85f-4274-8710-e386a92b8fe3",
+						"type": "text/javascript",
+						"exec": [
+							"let postid = pm.iterationData.get(\"post_id\");",
+							"console.log(\"Post ID that will be sent\", postid);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.stackexchange.com/2.2/posts/{{post_id}}/comments?site={{site}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stackexchange",
+						"com"
+					],
+					"path": [
+						"2.2",
+						"posts",
+						"{{post_id}}",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "{{site}}"
+						}
+					]
+				},
+				"description": "Get comments on the posts (question or answer) identified by a set of ids"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Question Answers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "76aef95f-c362-4462-9f6b-fcb78eb199f9",
+						"type": "text/javascript",
+						"exec": [
+							"let schema = postman.getEnvironmentVariable('schema');",
+							" ",
+							"let jsonData = pm.response.json();",
+							"",
+							"pm.test('JSON Schema is valid', function() {",
+							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+							"",
+							"});",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "226c5a5b-541f-4146-9cd0-ab5508430466",
+						"type": "text/javascript",
+						"exec": [
+							"let questionid = pm.iterationData.get(\"question_id\");",
+							"console.log(\"Question ID that will be sent\", questionid);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://api.stackexchange.com/2.2/questions/{{question_id}}/answers?site={{site}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"stackexchange",
+						"com"
+					],
+					"path": [
+						"2.2",
+						"questions",
+						"{{question_id}}",
+						"answers"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "{{site}}"
+						}
+					]
+				},
+				"description": "Get the answers to the questions identified by a set of ids"
+			},
+			"response": []
+		}
+	]
+}

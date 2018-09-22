@@ -1,0 +1,445 @@
+{
+	"id": "8ddc2d6e-8f83-44d4-b57d-58cbdc348a0c",
+	"name": "Stackexchange API",
+	"allTests": [],
+	"timestamp": "2018-09-22T11:16:47.659Z",
+	"collection_id": "27ba2294-2c0f-41df-b321-397c8172c5dd",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "4a7e8592-5c3a-4ab6-b0fd-701971650e8b",
+	"data": [],
+	"delay": 0,
+	"count": 4,
+	"collection": {
+		"id": "27ba2294-2c0f-41df-b321-397c8172c5dd",
+		"name": "Stackexchange API",
+		"description": "This collection tests the Stackexchange API calls",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [
+			"0b5c0717-1da0-4c6d-8fbc-67b9a7ab4375",
+			"a339ddca-fc91-45b2-814e-da856bf8624d",
+			"9f45f61a-0222-4274-885f-9309803a6ce8",
+			"493fe513-3f2b-431d-bfda-64cbba77dc26",
+			"1c116ed8-92e6-4e5f-9e83-c38b95a6e781"
+		],
+		"folders_order": [],
+		"owner": "5402348",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"key": "schema",
+			"value": "{\n    \"definitions\": {},\n    \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n    \"$id\": \"http://example.com/root.json\",\n    \"type\": \"object\",\n    \"title\": \"The Root Schema\",\n    \"required\": [\n      \"items\",\n      \"has_more\",\n     \"quota_max\",\n     \"quota_remaining\"\n   ],\n   \"properties\": {\n     \"items\": {\n       \"$id\": \"#/properties/items\",\n       \"type\": \"array\",\n       \"title\": \"The Items Schema\"\n     },\n     \"has_more\": {\n       \"$id\": \"#/properties/has_more\",\n       \"type\": \"boolean\",\n       \"title\": \"The Has_more Schema\",\n       \"default\": false,\n       \"examples\": [\n         false\n       ]\n     },\n     \"quota_max\": {\n       \"$id\": \"#/properties/quota_max\",\n       \"type\": \"integer\",\n       \"title\": \"The Quota_max Schema\",\n       \"default\": 0,\n       \"examples\": [\n         300\n       ]\n     },\n     \"quota_remaining\": {\n       \"$id\": \"#/properties/quota_remaining\",\n       \"type\": \"integer\",\n       \"title\": \"The Quota_remaining Schema\",\n       \"default\": 0,\n       \"examples\": [\n         266\n       ]\n     }\n   }\n }",
+			"description": "",
+			"type": "text",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"name": "Get Comments for Answer",
+			"id": "0b5c0717-1da0-4c6d-8fbc-67b9a7ab4375",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"JSON Schema is valid": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				"400",
+				"152",
+				"152",
+				"164"
+			],
+			"allTests": [
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				}
+			],
+			"time": "164",
+			"totalRequestTime": 868,
+			"iterationResults": {}
+		},
+		{
+			"name": "Get Badges Recipients",
+			"id": "a339ddca-fc91-45b2-814e-da856bf8624d",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"JSON Schema is valid": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				"128",
+				"156",
+				"176",
+				"152"
+			],
+			"allTests": [
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				}
+			],
+			"time": "152",
+			"totalRequestTime": 612,
+			"iterationResults": {}
+		},
+		{
+			"name": "Get Specific Comments",
+			"id": "9f45f61a-0222-4274-885f-9309803a6ce8",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"JSON Schema is valid": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				"192",
+				"200",
+				"124",
+				"184"
+			],
+			"allTests": [
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				}
+			],
+			"time": "184",
+			"totalRequestTime": 700,
+			"iterationResults": {}
+		},
+		{
+			"name": "Get Post Comments",
+			"id": "493fe513-3f2b-431d-bfda-64cbba77dc26",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"JSON Schema is valid": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				"144",
+				"156",
+				"136",
+				"156"
+			],
+			"allTests": [
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				}
+			],
+			"time": "156",
+			"totalRequestTime": 592,
+			"iterationResults": {}
+		},
+		{
+			"name": "Get Question Answers",
+			"id": "1c116ed8-92e6-4e5f-9e83-c38b95a6e781",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"JSON Schema is valid": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				"108",
+				"144",
+				"165",
+				"160"
+			],
+			"allTests": [
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				},
+				{
+					"JSON Schema is valid": true,
+					"Status code is 200": true
+				}
+			],
+			"time": "160",
+			"totalRequestTime": 577,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 40,
+	"totalFail": 0,
+	"totalTime": 3349,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Get Comments for Answer",
+			"id": "0b5c0717-1da0-4c6d-8fbc-67b9a7ab4375",
+			"url": "http://api.stackexchange.com/2.2/answers/52455176/comments?site=stackoverflow",
+			"time": "164",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get Badges Recipients",
+			"id": "a339ddca-fc91-45b2-814e-da856bf8624d",
+			"url": "http://api.stackexchange.com/2.2/badges/263/recipients?site=stackoverflow",
+			"time": "152",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get Specific Comments",
+			"id": "9f45f61a-0222-4274-885f-9309803a6ce8",
+			"url": "http://api.stackexchange.com/2.2/comments/91853318?site=stackoverflow",
+			"time": "184",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get Post Comments",
+			"id": "493fe513-3f2b-431d-bfda-64cbba77dc26",
+			"url": "http://api.stackexchange.com/2.2/posts/8785955/comments?site=stackoverflow",
+			"time": "156",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get Question Answers",
+			"id": "1c116ed8-92e6-4e5f-9e83-c38b95a6e781",
+			"url": "http://api.stackexchange.com/2.2/questions/52455482/answers?site=stackoverflow",
+			"time": "160",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"JSON Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
